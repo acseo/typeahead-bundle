@@ -255,7 +255,7 @@
                 if (!li.length) {
                     // convert 'name_subname_extraname' to 'name[subname][extraname][]'
                     var name = _id.split(/_/);
-                    name = (name.length > 1 ? name.shift() + '[' + name.join('][') + ']' : name.join()) + '[]';
+                    name = (name.length > 1 ? name.shift() + '_' + name.shift() + '_' + name.shift() + '_' + name.shift() + '[' + name.join('][') + ']' : name.join()) + '[]';
                     li = $( this.$id.data('prototype') );
                     li.data('value', data.id)
                         .find('input:hidden').val(data.id).attr('id', _id + '_' + data.id).attr('name', name).end()
