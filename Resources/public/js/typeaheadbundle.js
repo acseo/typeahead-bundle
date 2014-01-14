@@ -100,7 +100,8 @@
         // start new ajax request
         this.xhr = $.ajax({
             context: this,
-            url: this.options.url,
+            // url: this.options.url,
+            url: $(this.$element[0]).data('url'), //ACSEO : prefer using up to date data-url property, in case it has been modified
             type: 'post',
             data: { query: query, limit: this.options.items },
             beforeSend: this.options.beforeSend,
